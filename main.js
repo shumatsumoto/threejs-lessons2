@@ -1,5 +1,4 @@
 import * as THREE from "./build/three.module.js";
 
-// Scene
-const scene = new THREE.Scene();
-console.log(scene);
+let scene;
+scene = new THREE.Scene();
