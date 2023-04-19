@@ -39,5 +39,9 @@ pointLight = new THREE.PointLight(0xffffff, 1);
 pointLight.position.set(-200, -200, -200);
 scene.add(pointLight);
 
+// ポイント光源の位置特定
+let pointLightHelper = new THREE.PointLightHelper(pointLight, 30);
+scene.add(pointLightHelper);
+
 // レンダリング
 renderer.render(scene, camera);
