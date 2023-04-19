@@ -20,11 +20,14 @@ document.body.appendChild(renderer.domElement);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 
+// テクスチャ追加
+let textures = new THREE.TextureLoader().load("./textures/earth.jpg");
+
 // ジオメトリ作成
 let ballGeometry = new THREE.SphereGeometry(100, 64, 32);
 
 // マテリアル作成
-let ballMaterial = new THREE.MeshPhysicalMaterial();
+let ballMaterial = new THREE.MeshPhysicalMaterial({ map: textures });
 
 // メッシュ化
 let ballMesh = new THREE.Mesh(ballGeometry, ballMaterial);
