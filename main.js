@@ -23,3 +23,7 @@ let ballGeometry = new THREE.SphereGeometry(100, 64, 32);
 
 // マテリアル作成
 let ballMaterial = new THREE.MeshPhysicalMaterial();
+
+// メッシュ化
+let ballMesh = new THREE.Mesh(ballGeometry, ballMaterial);
+scene.add(ballMesh);
