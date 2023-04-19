@@ -10,9 +10,13 @@ camera = new THREE.PerspectiveCamera(
   1000
 );
 
+// レンダラー追加
 renderer = new THREE.WebGLRenderer({
   alpha: true,
 });
 document.body.appendChild(renderer.domElement);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
+
+// ジオメトリ作成
+let ballGeometry = new THREE.SphereGeometry(100, 64, 32);
