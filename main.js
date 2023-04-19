@@ -1,6 +1,7 @@
 import * as THREE from "./build/three.module.js";
+import { OrbitControls } from "./controls/OrbitControls.js";
 
-let scene, camera, renderer, pointLight;
+let scene, camera, renderer, pointLight, controls;
 scene = new THREE.Scene();
 
 camera = new THREE.PerspectiveCamera(
@@ -42,6 +43,9 @@ scene.add(pointLight);
 // ポイント光源の位置特定
 let pointLightHelper = new THREE.PointLightHelper(pointLight, 30);
 scene.add(pointLightHelper);
+
+// マウス操作可能にする
+controls = new OrbitControls(camera, renderer.domElement);
 
 // ポイント光源を巡回
 function animate() {
