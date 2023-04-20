@@ -54,7 +54,16 @@ function init() {
   // マウス操作可能にする
   controls = new OrbitControls(camera, renderer.domElement);
 
+  window.addEventListener("resize", onWindowResize);
+
   animate();
+}
+
+// リサイズ対応
+function onWindowResize() {
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
 }
 
 // ポイント光源を巡回
